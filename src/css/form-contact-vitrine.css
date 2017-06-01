@@ -1,0 +1,672 @@
+/* GLOBAL */
+.vitrine-form {
+    width: 960px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.vitrine-form.vitrine-form-FCC {
+    width: 100%;
+}
+
+.vitrine-form.vitrine-form-FF {
+    width: 100%;
+}
+
+
+.steps-container {
+    width: 600px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+}
+.tar { text-align: right !important; }
+
+.form-with-steps {
+    position: relative;
+    z-index: 2;
+    background-color: #fff;
+    width: 100%;
+    padding-top: 30px;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, opacity 0.2s linear;
+}
+
+.form-with-steps.reployed {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.form-with-steps .close-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+.form-with-steps .close-container > img {
+    width: 100%;
+    height: auto;
+}
+
+/* BREADCRUMB */
+.breadcrumb { position: relative; display: inline-block; }
+.breadcrumb:before, .breadcrumb .progress {
+    content: "";
+    height: 8px;
+    background-color: #dfe3e6;
+    position: absolute;
+    width: calc(100% - 30px);
+    z-index: -2;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: width 0.3s ease-out;
+}
+.breadcrumb .progress {
+    z-index: -1;
+    background-color: #00d7fe;
+}
+
+.breadcrumb ul { margin: 0px; padding: 0px; }
+
+.breadcrumb li.breadcrumb-step {
+    list-style: none;
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    margin-right: 80px;
+}
+
+.breadcrumb li.breadcrumb-step button {
+    margin: 0px;
+    padding: 0px;
+    border: none;
+    background: none;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 50%;
+    background-color: #dfe3e6;
+    vertical-align: middle;
+    color: #dfe3e6;
+    transition: all 0.3s ease-out;
+    transform: scale(0.8);
+    transform-origin: center;
+    outline: none;
+    font-size: .875em;
+}
+
+.breadcrumb li.breadcrumb-step.active button {
+    background-color: #00d7fe;
+    color: #00d7fe;
+}
+.breadcrumb li.breadcrumb-step.current button {
+    transform: scale(1);
+    background-color: #00d7fe;
+    color: #fff;
+}
+
+.breadcrumb li.breadcrumb-step:last-child { margin-right: 0px; }
+
+.breadcrumb.complete li.breadcrumb-step.active button, .breadcrumb.complete .progress {
+    background-color: #00e600;
+    color: #00e600;
+    transition: all 0.3s linear;
+}
+
+/* STEPS FORM */
+.steps-container {
+    overflow: hidden;
+    box-sizing: border-box;
+    margin-top: 20px;
+    transition: max-height 0.3s ease-out;
+}
+.steps-container .steps-wrapper {
+    width: 300%;
+    position: relative;
+    transition: transform 0.3s ease-out;
+}
+.steps-container .steps-wrapper .step-form {
+    position: relative;
+    display: inline-block;
+    width: calc(100% / 3);
+    padding: 20px;
+    vertical-align: top;
+}
+
+.step-form h5 {
+    margin: 0px;
+    font-size: 1.375em;
+    font-weight: 700;
+    color: #0a293d;
+    text-transform: none;
+}
+
+.step-form form {
+    margin-top: 40px;
+    position: relative;
+}
+
+.step-form abbr {
+    color: red;
+    border-bottom: none;
+    text-decoration: none;
+    top: -5px;
+    position: relative;
+}
+
+.step-form span {
+    color: #83949e;
+    font-size: .8125em;
+}
+
+.step-form label {
+    display: block;
+    width: 100%;
+    text-transform: uppercase;
+    font-size: .8125em;
+    font-weight: 700;
+    color: #0a293d;
+}
+.step-form label.error {
+    display: none !important;
+}
+.step-form p {
+    font-size: .75em !important;
+    color: #83949e !important;
+    margin: 0px !important;
+    padding: 0px !important;
+}
+
+.step-form .input-row { display: block; position: relative; margin-bottom: 20px; }
+.step-form .input-row.row-controls { margin-top: 40px; }
+.step-form .input-row > div {
+    display: inline-block;
+    vertical-align: middle;
+}
+.step-form .input-row .col-label {
+    width: calc(100% / 3);
+    text-align: left;
+    padding-right: 20px;
+}
+.step-form .input-row .col-input {
+    width: calc(100% / 3 * 2);
+    text-align: left;
+    padding-left: 20px;
+}
+.col-input span {
+    margin-right: 20px;
+    color: #0a293d;
+    font-size: .875em;
+}
+.step-form textarea, .step-form input, .step-form select {
+    width: 100%;
+    display: block;
+    border: 1px solid #e7e8ea;
+    transition: border 0.2s linear;
+    background: #fff;
+}
+
+.step-form select {
+    font-size: .875rem;
+    height: 40px;
+}
+
+.step-form textarea:focus, .step-form input:focus, .step-form select:focus {
+    border: 1px solid #83949e;
+}
+
+.step-form textarea {
+    height: 130px;
+}
+
+.step-form button {
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+    padding: 0 20px;
+    font-size: .8125em;
+    font-weight: 700;
+    text-transform: uppercase;
+    height: 40px;
+    line-height: 40px;
+    background: #00e600;
+    color: #fff;
+    text-transform: uppercase;
+    border-radius: 2px;
+    transition: all .3s ease-out;
+}
+
+.step-form button:hover {
+    background: #4dee4d;
+}
+
+.step-form p.confirmation-sent {
+    font-size: 1rem;
+    margin-top: 20px;
+    color: #0a293d;
+}
+
+/* CAPTCHA */
+.captcha-input.captcha-error iframe { border: 1px solid red; }
+
+/* LOADER */
+.loader-overlay {
+    background-color: rgba(255, 255, 255, 0.8);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    display: none;
+}
+
+.loader-overlay.display {
+    display: block;
+}
+
+.loader-overlay > div {
+    left: 50%;
+    top: 50%;
+    position: relative;
+    transform: translate(-50%, -50%);
+}
+
+.loader-overlay img {
+    width: 75px;
+    height: auto;
+}
+
+/* Date Picker */
+a.react-datepicker__navigation--next:hover, a.react-datepicker__navigation--previous { border-bottom-color: transparent; }
+.react-datepicker__input-container { width: 100%; }
+
+
+/* header finder */
+.header-finder {
+    position: absolute;
+    z-index: 1;
+}
+
+.header-finder .step-form h5, .header-finder .step-form .input-row .col-label {
+    display: none;
+}
+.header-finder .step-form .input-row .col-input {
+    width: 100%;
+}
+.header-finder > .step-form form {
+    font-size: 0px;
+    margin-top: 0px;
+}
+.header-finder > .step-form form > div {
+    display: inline-block;
+    vertical-align: top;
+    width: 200px;
+}
+.header-finder .step-form .input-row .col-input {
+    padding-left: 0px;
+    position: relative;
+}
+.header-finder .step-form .input-row.row-controls {
+    margin-top: 0px;
+}
+.header-finder .step-form button {
+    width: 100%;
+    font-size: 12px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.header-finder > .step-form form > div:first-child {
+    width: calc(100% - 200px - 200px - 224px)
+}
+.header-finder > .step-form form > div:nth-child(2) {
+    width: 400px;
+    font-size: 0px;
+}
+.header-finder > .step-form form > div:nth-child(2) > div {
+    display: inline-block;
+    width: 50%;
+}
+.header-finder > .step-form form > div:nth-child(3) {
+    width: 224px;
+}
+
+.header-finder form input, .header-finder form select {
+    background-color: #f1f2f4;
+    transition: background-color 0.3s linear;
+}
+.header-finder form select {
+    appearance: none;
+    padding-left: 20px;
+    position: relative;
+    outline: none;
+}
+.header-finder form select::-ms-expand { /* for IE 11 */
+    display: none;
+}
+
+.header-finder form .select-container {
+    position: relative;
+}
+.header-finder form .select-container:after {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border: 1px solid grey;
+    transform: rotate(45deg);
+    border-top-color: transparent;
+    border-left-color: transparent;
+    top: 18px;
+    right: 15px;
+}
+
+.header-finder form input, .header-finder form select, .header-finder form button {
+    height: 50px;
+    border-radius: 0px;
+}
+.header-finder form input {
+    padding-left: 30px;
+}
+.header-finder form input:hover, .header-finder form select:hover {
+    background-color: #fff;
+}
+.header-finder .step-form input:focus, .header-finder .step-form select:focus {
+    border: 1px solid #e7e8ea;
+    background-color: #fff;
+}
+.header-finder .step-form .input-row {
+    margin-bottom: 0px;
+}
+
+.header-finder form #prefill_type {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.header-finder form .input-container {
+    position: relative;
+}
+.header-finder form .input-container > i {
+    font-size: 18px;
+    color: #00e600;
+    position: absolute;
+    top: 16px;
+    left: 12px;
+    z-index: 10;
+    pointer-events: none;
+}
+.header-finder form .input-container > i.fa-calendar-o {
+    left: 8px;
+}
+
+.header-finder .container-cta-not-finalized {
+    width: 100% !important;
+}
+button.btn-as-link {
+    width: auto !important;
+    padding: 0px;
+    background: 0px;
+    height: auto !important;
+    border: none;
+    text-transform: none;
+    transition: color .3s linear;
+    outline: none;
+}
+button.btn-as-link:hover {
+    background: none !important;
+    color: #4dee4d;
+}
+
+/* Fom FH */
+.vitrine-form-FH {
+    box-shadow: 0 10px 50px 0 rgba(0,0,0,.2);
+}
+
+/* Form FCC */
+.vitrine-form-FCC .form-with-steps {
+    padding: 0px;
+    background: transparent;
+}
+.vitrine-form-FCC .step-form form {
+    margin-top: 20px;
+}
+.vitrine-form-FCC .steps-container {
+    margin-top: 0px;
+}
+.vitrine-form-FCC .form-with-steps h5 {
+    display: none;
+}
+.vitrine-form-FCC .step-form button {
+    width: 100%;
+    display: block;
+    outline: none;
+}
+.vitrine-form-FCC .steps-container {
+    width: 100%;
+}
+.vitrine-form-FCC .step-form .input-row .col-label {
+    width: 100%;
+    padding-right: 0px;
+}
+.vitrine-form-FCC .step-form .input-row .col-input {
+    width: 100%;
+    padding-left: 0px;
+}
+.vitrine-form-FCC .step-form .input-row.row-controls {
+    margin-top: 0px;
+}
+.vitrine-form-FCC .step-form:first-child .input-row .col-label {
+    display: none;
+}
+.vitrine-form-FCC .step-form:first-child form > div > .input-row {
+    display: inline-block;
+    width: 100%
+}
+.vitrine-form-FCC .col-input span {
+    margin-right: 0px;
+    margin-bottom: 10px;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+.vitrine-form-FCC .steps-container .steps-wrapper .step-form {
+    padding: 0px;
+}
+.vitrine-form-FCC .step-form label {
+    color: #fff;
+}
+.vitrine-form-FCC .row-controls .col-input span {
+    color: #fff;
+}
+
+
+/* Form FIP */
+.c-push {
+    height: auto;
+    min-height: 385px;
+}
+.vitrine-form-FF .form-with-steps {
+    padding: 0px;
+    background: transparent;
+}
+.vitrine-form-FF .step-form form {
+    margin-top: 0px;
+}
+.vitrine-form-FF .steps-container {
+    margin-top: 0px;
+}
+.vitrine-form-FF .form-with-steps h5 {
+    display: none;
+}
+.vitrine-form-FF .step-form button {
+    width: 100%;
+    display: block;
+    outline: none;
+}
+.vitrine-form-FF .steps-container {
+    width: 100%;
+}
+.vitrine-form-FF .step-form .input-row .col-label {
+    width: 100%;
+    padding-right: 0px;
+}
+.vitrine-form-FF .step-form .input-row .col-input {
+    width: 100%;
+    padding-left: 0px;
+}
+.vitrine-form-FF .step-form .input-row.row-controls {
+    margin-top: 20px;
+}
+.vitrine-form-FF .step-form:first-child .input-row .col-label {
+    display: none;
+}
+.vitrine-form-FF .step-form:first-child form > div > .input-row {
+    display: inline-block;
+    width: calc(50% - 10px);
+}
+.vitrine-form-FF .step-form:first-child form > div > .input-row:last-child {
+    margin-left: 20px;
+}
+.vitrine-form-FF .col-input span {
+    margin-right: 0px;
+    margin-bottom: 10px;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+.vitrine-form-FF .steps-container .steps-wrapper .step-form {
+    padding: 0px;
+}
+.vitrine-form-FF .step-form label {
+    color: #fff;
+}
+.vitrine-form-FF .row-controls .col-input span {
+    color: #fff;
+}
+
+.vitrine-form-FC {
+    width: 100%;
+}
+
+/* Tablette Portrait */
+@media screen and (max-width: 999px) {
+    .vitrine-form {
+        width: calc(100% - 40px);
+    }
+    .vitrine-form.vitrine-form-FCC, .vitrine-form.vitrine-form-FF {
+        width: 100%;
+    }
+    .header-finder > .step-form form > div:first-child {
+        width: 100%;
+    }
+    .header-finder > .step-form form > div:nth-child(2) {
+        width: 100%;
+    }
+    .header-finder > .step-form form > div:nth-child(2) > div {
+        width: 100%;
+    }
+    .header-finder > .step-form form > div:nth-child(3) {
+        width: 100%;
+    }
+    .header-finder form #prefill_type {
+        border-radius: 0px;
+        border-top-right-radius: 5px;
+        border-top-left-radius: 5px;
+    }
+
+    .header-finder .step-form button {
+        border-radius: 0px;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+    .vitrine-form-FH {
+        min-height: 240px;
+        box-shadow: none;
+    }
+    .vitrine-form-FH .form-with-steps {
+        margin-bottom: 20px;
+    }
+
+    .c-jumbotron-tunnel {
+        margin-bottom: 0px !important
+    }
+
+    .vitrine-form-FF .step-form .input-row.row-controls {
+        margin-bottom: 0px;
+    }
+
+    .step-form label, .step-form button, .step-form input, .step-form select, .step-form textarea {
+        font-size: 13px;
+    }
+    .step-form span, .col-input span, .breadcrumb li.breadcrumb-step button {
+        font-size: 12px;
+    }
+
+    /* fixes */
+    .c-push {
+        padding: 30px;
+        min-height: 310px;
+    }
+
+    .c-card-celebrity--horizontal .c-well__content {
+        height: 80px !important;
+    }
+
+    .c-jumbotron-tunnel__cta__button {
+        margin-top: 40px;
+    }
+}
+
+/* Mobiles only */
+@media screen and (max-width: 640px) {
+    .step-form button {
+        width: 100%;
+        display: block;
+    }
+    .steps-container {
+        width: 100%;
+    }
+    .step-form .input-row .col-label {
+        width: 100%;
+        padding-right: 0px;
+    }
+    .step-form .input-row .col-input {
+        width: 100%;
+        padding-left: 0px;
+    }
+    .step-form .input-row.row-controls {
+        margin-top: 20px;
+    }
+    .col-input span {
+        margin-right: 0px;
+        margin-bottom: 10px;
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+    .form-with-steps {
+        padding-top: 60px;
+    }
+
+    .vitrine-form.vitrine-form-FH {
+        width: 100%;
+    }
+
+    /* fixes */
+    .c-push {
+        padding: 16px 16px 16px 16px;
+        min-height: 0px;
+    }
+    .c-push__cta {
+        position: relative;
+        width: 100%;
+        left: initial !important;
+        right: initial !important;
+        bottom: initial !important;
+    }
+}
